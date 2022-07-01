@@ -175,7 +175,7 @@ else
 fi
 
 az vm extension set -n 'OPNSenseConfig' --publisher Microsoft.Azure.Extensions --vm-name $vmname --settings cloud-init
-  --settings '{"fileUris": ["https://raw.githubusercontent.com/me/project/hello.sh"],"commandToExecute": "./hello.sh"}'
+  --settings '{"fileUris": ["https://raw.githubusercontent.com/bcosden/opnsense-nva/master/configure.sh"],"commandToExecute": "./configure.sh"}'
 {
     "fileUris": [
     "[format('{0}{1}', parameters('OPNScriptURI'), parameters('ShellScriptName'))]"
