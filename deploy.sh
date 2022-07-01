@@ -174,14 +174,9 @@ else
         --only-show-errors
 fi
 
-az vm extension set -n 'OPNSenseConfig' --publisher Microsoft.Azure.Extensions --vm-name $vmname --settings cloud-init
-  --settings '{"fileUris": ["https://raw.githubusercontent.com/bcosden/opnsense-nva/master/configure.sh"],"commandToExecute": "./configure.sh"}'
-{
-    "fileUris": [
-    "[format('{0}{1}', parameters('OPNScriptURI'), parameters('ShellScriptName'))]"
-    ],
-    "commandToExecute": "[format('sh {0} {1} {2} {3} {4} {5} {6}', parameters('ShellScriptName'), parameters('ShellScriptObj').OpnScriptURI, parameters('ShellScriptObj').OpnType, if(not(empty(parameters('ShellScriptObj').TrustedSubnetName)), reference(resourceId('Microsoft.Network/virtualNetworks/subnets', split(parameters('ShellScriptObj').TrustedSubnetName, '/')[0], split(parameters('ShellScriptObj').TrustedSubnetName, '/')[1]), '2020-11-01').addressPrefix, ''), if(not(empty(parameters('ShellScriptObj').WindowsSubnetName)), reference(resourceId('Microsoft.Network/virtualNetworks/subnets', split(parameters('ShellScriptObj').WindowsSubnetName, '/')[0], split(parameters('ShellScriptObj').WindowsSubnetName, '/')[1]), '2020-11-01').addressPrefix, '1.1.1.1/32'), parameters('ShellScriptObj').publicIPAddress, parameters('ShellScriptObj').opnSenseSecondarytrustedNicIP)]"
-}
+az vm extension set -n 'OPNSenseConfig' --publisher Microsoft.Azure.Extensions --vm-name $vmname \
+    --settings '{"fileUris": ["https://raw.githubusercontent.com/bcosden/opnsense-nva/master/configure.sh"],"commandToExecute": "./configure.sh"}' \
+    -o none
 
 # create Spoke1 VM
 echo -e "$WHITE$(date +"%T")$GREEN Creating Spoke1 VM $WHITE"
