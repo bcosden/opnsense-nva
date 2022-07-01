@@ -174,7 +174,7 @@ else
         --only-show-errors
 fi
 
-az vm extension set -n 'OPNSenseConfig' --publisher Microsoft.Azure.Extensions --vm-name $vmname \
+az vm extension set -g $rg -n customScript --publisher Microsoft.Azure.Extensions --vm-name $vmname \
     --settings '{"fileUris": ["https://raw.githubusercontent.com/bcosden/opnsense-nva/master/configure.sh"],"commandToExecute": "./configure.sh"}' \
     -o none
 
