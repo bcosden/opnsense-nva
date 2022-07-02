@@ -1,0 +1,16 @@
+       </geoip>
+        <aliases>
+          <alias uuid="637063a6-909d-4544-b2ac-c883a9ea97e4">
+            <enabled>1</enabled>
+            <name>WindowsVMSubnet</name>
+            <type>network</type>
+            <proto/>
+            <counters>0</counters>
+            <updatefreq/>
+            <content>1.1.1.1/32</content>
+            <description/>
+          </alias>
+        </aliases>
+      </Alias>
+    </Firewall>
+  </OPNsense>
