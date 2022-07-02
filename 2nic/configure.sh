@@ -1,10 +1,8 @@
 #!/bin/sh
 
 fetch https://raw.githubusercontent.com/bcosden/opnsense-nva/master/2nic/config.xml
-#fetch $1get_nic_gw.py
-#gwip=$(python get_nic_gw.py $3)
-sed -i "" "s/yyy.yyy.yyy.yyy/$gwip/" config.xml
-sed -i "" "s_zzz.zzz.zzz.zzz_$4_" config.xml
+sed -i "" "s/yyy.yyy.yyy.yyy/10.1.4.1/" config.xml
+sed -i "" "s/zzz.zzz.zzz.zzz/1.1.1.1/32" config.xml
 cp config.xml /usr/local/etc/config.xml
 
 # 1. Package to get root certificate bundle from the Mozilla Project (FreeBSD)

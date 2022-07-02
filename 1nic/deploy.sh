@@ -315,7 +315,9 @@ az network routeserver peering list-learned-routes \
     --routeserver rshub \
     --resource-group $rg
 
-echo "To check OPN route table"
-echo "ssh azureuser@"$(az vm show -g $rg -n $vmname --show-details --query "publicIps" -o tsv)
-echo "vtysh"
-echo "show ip bgp"
+echo "OPNSense deployed. Give the VM about 5 - 10 minutes to finish configuration."
+echo "Then go to https://"$(az vm show -g $rg -n $vmname --show-details --query "publicIps" -o tsv)
+echo "to finish configuration:"
+echo "1. Add WAN Firewall rule to enable SSH"
+echo "2. Add FRR plug-in for BGP support"
+echo "3. Add peering to the RouteServer"
