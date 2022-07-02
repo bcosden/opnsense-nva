@@ -149,7 +149,7 @@ if [ $usessh = "true" ]; then
         -g $rg \
         --image thefreebsdfoundation:freebsd-13_1:13_1-release:13.1.0 \
         --size $vmsize \
-        --nics $vmname"NIC" \
+        --nics $vmname"ExtNIC" $vmname"IntNIC" \
         --authentication-type ssh \
         --admin-username $username \
         --ssh-key-values @~/.ssh/id_rsa.pub \
@@ -160,7 +160,7 @@ else
         -g $rg \
         --image thefreebsdfoundation:freebsd-13_1:13_1-release:13.1.0 \
         --size $vmsize \
-        --nics $vmname"NIC" \
+        --nics $vmname"ExtNIC" $vmname"IntNIC" \
         --admin-username $username \
         --admin-password $password \
         --ssh-key-values @~/.ssh/id_rsa.pub \
