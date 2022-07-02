@@ -202,6 +202,7 @@ az rest --method PUT \
     --body "$json" \
     --output none
 
+echo -e "$WHITE$(date +"%T")$GREEN Configuring OPNSense on NVA $WHITE"
 # Must use waagent v1 for Linux on freebsd. v2 is not compatible.
 az vm extension set -g $rg -n CustomScriptForLinux --publisher Microsoft.OSTCExtensions --vm-name $vmname \
     --settings '{"fileUris": ["https://raw.githubusercontent.com/bcosden/opnsense-nva/master/1nic/configure.sh"],"commandToExecute": "./configure.sh"}' \
