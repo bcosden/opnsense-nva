@@ -317,7 +317,11 @@ az network routeserver peering list-learned-routes \
 
 echo "OPNSense deployed. Give the VM about 5 - 10 minutes to finish configuration."
 echo "Then go to https://"$(az vm show -g $rg -n $vmname --show-details --query "publicIps" -o tsv)
+echo "default login:"
+echo "username: root"
+echo "password: opnsense"
 echo "to finish configuration:"
+echo "0. CHANGE YOUR PASSWORD!!!!"
 echo "1. Add WAN Firewall rule to enable SSH"
 echo "2. Add FRR plug-in for BGP support"
 echo "3. Add peering to the RouteServer"
