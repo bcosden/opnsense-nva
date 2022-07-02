@@ -1,7 +1,7 @@
 #!/bin/sh
 
 fetch https://raw.githubusercontent.com/bcosden/opnsense-nva/master/config-1nic.xml
-cp config-snic.xml /usr/local/etc/config.xml
+cp config-1nic.xml /usr/local/etc/config.xml
 
 # 1. Package to get root certificate bundle from the Mozilla Project (FreeBSD)
 # 2. Install bash to support Azure Backup integration
