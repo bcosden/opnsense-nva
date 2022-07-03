@@ -5,6 +5,10 @@ sed -i "" "s/yyy.yyy.yyy.yyy/10.1.4.1/" config.xml
 sed -i "" "s/zzz.zzz.zzz.zzz/1.1.1.1\/32/" config.xml
 cp config.xml /usr/local/etc/config.xml
 
+fetch https://github.com/mihakralj/opnsense-theme-dark/raw/main/os-theme-dark-devel-0.1.txz
+tar xvf os-theme-dark-devel-0.1.txz -C /
+cp /usr/local/opnsense/www/themes/dark/build/css/DarkOrange.css /usr/local/opnsense/www/themes/dark/build/css/colors.css
+
 # 1. Package to get root certificate bundle from the Mozilla Project (FreeBSD)
 # 2. Install bash to support Azure Backup integration
 env IGNORE_OSVERSION=yes
