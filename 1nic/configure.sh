@@ -3,8 +3,7 @@
 fetch https://raw.githubusercontent.com/bcosden/opnsense-nva/master/1nic/config-1nic.xml
 cp config-1nic.xml /usr/local/etc/config.xml
 
-#fetch https://github.com/mihakralj/opnsense-theme-dark/raw/main/os-theme-dark-devel-0.1.txz
-#tar xvf os-theme-dark-devel-0.1.txz -C /
+pkg install os-theme-rebellion-1.8.8
 
 # 1. Package to get root certificate bundle from the Mozilla Project (FreeBSD)
 # 2. Install bash to support Azure Backup integration
