@@ -23,6 +23,11 @@ username="azureuser"
 password="MyP@ssword123"
 vmsize="Standard_D2S_v3"
 
+# Allow RG to be set via shell var
+if [[ $1 ]]; then
+    rg=$1
+fi
+
 # create a resource group
 echo -e "$WHITE$(date +"%T")$GREEN Creating Resource Group$CYAN" $rg"$GREEN in $CYAN"$loc"$WHITE"
 az group create -n $rg -l $loc -o none
