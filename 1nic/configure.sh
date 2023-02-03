@@ -18,7 +18,7 @@ sed -i "" 's/#PermitRootLogin no/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 #OPNSense
 sed -i "" "s/reboot/shutdown -r +1/g" opnsense-bootstrap.sh.in
-sh ./opnsense-bootstrap.sh.in -y -r "22.1"
+sh ./opnsense-bootstrap.sh.in -y -r "23.1"
 
 # Installing bash - This is a requirement for Azure custom Script extension to run
 pkg install -y bash
